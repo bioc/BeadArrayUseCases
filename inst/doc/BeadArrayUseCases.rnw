@@ -770,7 +770,7 @@ Tools such as \Rfunction{BASH} and \Rfunction{HULK} are of no use if the process
 This functionality is only available in \Rpackage{beadarray} version 2.3.0 or newer
 \end{notebell}
 
-<<Registration>>=
+<<Registration, eval=FALSE>>=
 registrationScores <- checkRegistration(data, array = c(1,7) )
 boxplot(registrationScores, plotP95 = TRUE)
 @
@@ -902,7 +902,7 @@ Generate summary-level data for this dataset on the $\log_2$ and unlogged scale.
 \end{exc}
 
 
-<<createBeadSummaryData>>=
+<<createBeadSummaryData, eval=FALSE>>=
 
 datasumm <- summarize(BLData =data)
 
@@ -955,7 +955,7 @@ negative controls on the array is known using the function \Rfunction{calculateD
 Produce boxplots of the summarized data and calculate detection scores.
 \end{exc}
 
-<<ExpressionSetIllumina>>=
+<<ExpressionSetIllumina, eval=FALSE>>=
 dim(datasumm)
 
 
