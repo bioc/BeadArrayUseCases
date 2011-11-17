@@ -882,7 +882,7 @@ Generate a QC report for all arrays.
 <<qaReport,eval=FALSE>>=
 expressionQCPipeline(data)
 @
-The above code runs the QC pipeline with the default options. However, many aspects of the \Rfunction{expressionQCPipeline} function are configurable, such as the transformation function applied to the data the identities of the controls.
+The above code runs the QC pipeline with the default options. However, many aspects of the \Rfunction{expressionQCPipeline} function are configurable, such as the transformation function applied to the data, or the identities of the controls.
 
 \begin{notebell}
 The \Rfunction{expressionQCPipeline} function will attempt to create graphics and HTML files in the specified directory, so it is important that this directory is writable by the user. 
