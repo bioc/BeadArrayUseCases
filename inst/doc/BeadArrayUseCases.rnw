@@ -746,7 +746,7 @@ Run \Rfunction{HULK} on the first array, and replace the original intensities wi
 \end{exc}
 
 
-<<HULK, eval=FALSE>>=
+<<HULK, eval=TRUE>>=
 HULKoutput <- HULK(data, array = 1, transFun = logGreenChannelTransform)
 data <- insertBeadData(data, array = 1, data = HULKoutput,  what = "GrnHulk")
 @
