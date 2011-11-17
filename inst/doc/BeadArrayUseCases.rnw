@@ -748,7 +748,7 @@ Run \Rfunction{HULK} on the first array, and replace the original intensities wi
 
 <<HULK, eval=FALSE>>=
 HULKoutput <- HULK(data, array = 1, transFun = logGreenChannelTransform)
-data <- insertBeadData(data, array = 1, data = HULKoutput[[1]],  what = "GrnHulk")
+data <- insertBeadData(data, array = 1, data = HULKoutput,  what = "GrnHulk")
 @
 
 Similar to \Rfunction{BASH}, the primary argument to \Rfunction{HULK} is a \Rclass{beadLevelData} object.  It also takes a transformation function, allowing the intensity adjustment to be performed on any data stored within the object.
