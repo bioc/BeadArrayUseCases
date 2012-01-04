@@ -1605,8 +1605,10 @@ shortlabels <- substr(samples,12,13)
 
 rnasource <- pData(gse)[,"source_name_ch1"]
 levels(rnasource) <- c("UHRR", "Brain", "UHRR75", "UHRR25")
+e <- exprs(gse)
+mode(e) <- 'numeric'
 
-boxplot(log2(exprs(gse)), col=sites+1, names=shortlabels, las=2, cex.names=0.5, ylab=expression(log[2](intensity)), outline=FALSE, ylim=c(3,10), main="Before batch correction")
+boxplot(log2(e), col=sites+1, names=shortlabels, las=2, cex.names=0.5, ylab=expression(log[2](intensity)), outline=FALSE, ylim=c(3,10), main="Before batch correction")
 @
 
 \begin{noteright}

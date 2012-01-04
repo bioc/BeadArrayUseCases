@@ -1,5 +1,5 @@
 Package: BeadArrayUseCases
-Version: 1.0.4
+Version: 1.0.5
 Date: 2011-10-28
 Title: Analysing Illumina BeadArray expression data using Bioconductor
 Author: Mark Dunning, Wei Shi, Andy Lynch, Mike Smith, Matt Ritchie
