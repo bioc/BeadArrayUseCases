@@ -231,7 +231,7 @@ The first view of array quality can be assessed using the metrics calculated by 
 
 
 <<plotmetrics>>=
-ht12metrics <- read.table(system.file("extdata/BeadLevelBabFiles/Metrics.txt",package = "BeadArrayUseCases"),sep="\t",header=TRUE,as.is=TRUE)
+ht12metrics <- read.table(system.file("extdata/Chips/Metrics.txt",package = "BeadArrayUseCases"),sep="\t",header=TRUE,as.is=TRUE)
 
 
 ht12snr <- ht12metrics$P95Grn/ht12metrics$P05Grn
