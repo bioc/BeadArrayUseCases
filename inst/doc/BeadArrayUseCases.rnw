@@ -325,64 +325,6 @@ You should see that the percentage of overlapping IDs is greatest for the {\tt H
 The result of \Rfunction{suggestAnnotation} only gives guidance about which annotation to use. Hence, the results may be unpredictable on custom arrays, or arrays that are not listed in the \Rfunction{suggestAnnotation} output.
 \end{noteright}
 
-
-
-\subsubsection*{Reading data from different directories}
-
-The example data being analyzed here are organized in a somewhat artificial way, as arrays from different chips are available in the same directory. However, \Rfunction{readIllumina} expects to be pointed to a directory created by Illumina's scanning software with all files prefixed by the name of the chip. However, for experiments involving multiple BeadChips, it may be inconvenient to place all files in the same directory. \\
-
-The current version of \Rpackage{beadarray} does not permit reading data from multiple directories into the same \Robject{beadLevelData} object. The amount of memory required to read multiple chips in the same {\tt R} session can quickly become prohibitive, and the majority of analysts only combine data from different chips once they have been summarized. Users with data from multiple chips may combine their data at either the raw level (if they have the computer memory to do so) or at the summary level. \\
-
-% This many `subs' doesn’t exist, so I've just made it bold for now
-%\subsubsubsection*{Hypothetical Use Case - Combining multiple chips at the bead-level}
-\textbf{Hypothetical Use Case - Combining multiple chips at the bead-level}
-
-
-It is possible to read a few chips into the same R session and use the \Rfunction{combine} function in the manner shown in the code below.
-
-\begin{verbatim}
-bld1 <- readIllumina(dir = dir1)
-bld2 <- readIllumina(dir = dir2)
-bld3 <- readIllumina(dir = dir3)
-# repeat for however many directories
-
-bld <- combine(bld1, bld2)
-rm(bld1, bld2)
-bld <- combine(bld, bld3)
-rm(bld3)
-# etc
-\end{verbatim}
-
-% This many `subs' doesn’t exist, so I’ve just made it bold for now
-%\subsubsubsection{Hypothetical Use case - Combining data from multiple chips at the summary level}
-\textbf{Hypothetical Use case - Combining data from multiple chips at the summary level}
-
-Alternatively, a simple pipeline can be constructed to run identical quality control (QC) checks for each chip (as described in subsequent sections), summarize the data and then combine the summarized objects.
-
-\begin{verbatim}
-bld1 <- readIllumina(dir = dir1)
-##...some qc checks....##
-bsd1 <- summarize(bld1)
-rm(bld1)
-
-bld2 <- readIllumina(dir = dir2)
-##...some qc checks....##
-bsd2 <- summarize(bld2)
-rm(bld2)
-
-bld3 <- readIllumina(dir = dir3)
-##...some qc checks....##
-bsd3 <- summarize(bld3)
-rm(bld3)
-
-# repeat for however many directories
-
-bsd <- combine(bsd1, bsd2)
-bsd <- combine(bsd, bsd3)
-# etc
-\end{verbatim}
-
-
 \subsubsection*{The \Rclass{beadLevelData} class}
 
 Once imported, bead-level data are stored in an object of class \Rclass{beadLevelData}.
@@ -1502,7 +1444,6 @@ require("GenomicRanges")
 
 allLocs <- unlist(as.list(illuminaHumanv2GENOMICLOCATION))
 
-allLocs[[1000]]
 
 chrs <- unlist(lapply(allLocs,function(x) strsplit(as.character(x), ":")[[1]][1]))
 spos <- as.numeric(unlist(lapply(allLocs,function(x) strsplit(as.character(x), ":")[[1]][2])))
@@ -1530,7 +1471,7 @@ query <- IRanges(start = 28800001, end = 36500000)
 
 olaps <- findOverlaps(Humanv2RD, RangedData(query,space="chr8"))[["chr8"]]
 
-matchingProbes <- olaps@matchMatrix[,1]
+matchingProbes <- as.matrix(olaps)[,1]
 
 Humanv2RD[space(Humanv2RD) == "chr8",][matchingProbes,]
 
