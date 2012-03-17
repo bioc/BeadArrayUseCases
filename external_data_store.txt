@@ -1,3 +1,2 @@
 inst/extdata/FullData
-inst/extdata/BeadLevelBabFiles
-inst/extdata/Chips 
+inst/extdata/Chips
