@@ -1,0 +1,3 @@
+Date	Matrix	Section	RegGrn	FocusGrn	SatGrn	P95Grn	P05Grn	RegRed	FocusRed	SatRed	P95Red	P05Red
+3/24/2009 5:30:53 PM	4613710052	B	0.14	0.64	0	763	37	0	0	0	0	0
+

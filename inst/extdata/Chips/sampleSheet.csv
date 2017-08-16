@@ -1,0 +1,19 @@
+[Header],,,
+Investigator Name,Anon,,
+Project Name,MAQC,,
+Experiment Name,,,
+Date,,,
+[Data],,,
+Sample_Name,Sample_Group,Sentrix_ID,Sentrix_Position
+UHRR-1,UHRR,4613710017,B
+UHRR-2,UHRR,4613710052,B
+UHRR-3,UHRR,4613710054,B
+UHRR-4,UHRR,4616443079,B
+UHRR-5,UHRR,4616443093,B
+UHRR-6,UHRR,4616443115,B
+Brain-1,Brain,4616443081,B
+Brain-2,Brain,4616443081,H
+Brain-3,Brain,4616443092,B
+Brain-4,Brain,4616443107,A
+Brain-5,Brain,4616443136,A
+Brain-6,Brain,4616494005,A
