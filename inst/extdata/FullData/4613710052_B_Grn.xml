@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageHeader xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SentrixMatrixID>4613710052</SentrixMatrixID>
+  <SampleLabel>B</SampleLabel>
+  <SectionLabel />
+  <ColorChannel>Green</ColorChannel>
+  <ImageWidth>2389</ImageWidth>
+  <ImageHeight>18311</ImageHeight>
+  <RotationAngle>90</RotationAngle>
+  <Resolution>0.8391817</Resolution>
+  <ChOffsetX>0</ChOffsetX>
+  <ChOffsetY>0</ChOffsetY>
+  <Compressed>false</Compressed>
+  <ImageDate>2009-03-24T17:30:52.9265552-00:00</ImageDate>
+  <SentrixScanVersion>3.5.49.29917</SentrixScanVersion>
+  <RegistrationVersion>??</RegistrationVersion>
+  <ExtractionVersion>n/a</ExtractionVersion>
+  <ExtractionMethod>StandardWithBackground</ExtractionMethod>
+  <RegsitrationScores>
+    <registrationScore>0.1389957</registrationScore>
+    <focusScore>0.638554037</focusScore>
+    <saturatedPixels>0</saturatedPixels>
+    <A11>0</A11>
+    <A12>0</A12>
+    <A21>0</A21>
+    <A22>0</A22>
+    <A31>0</A31>
+    <A32>0</A32>
+  </RegsitrationScores>
+  <P95>763.158569</P95>
+  <P05>36.9785767</P05>
+  <PMT>593</PMT>
+  <PMTFactor>1</PMTFactor>
+  <Filter>Transmittance100Percent</Filter>
+  <zOffset>0</zOffset>
+  <ScannerID>S358</ScannerID>
+  <SlidePosition>0</SlidePosition>
+  <UserName>osborn05</UserName>
+</ImageHeader>
