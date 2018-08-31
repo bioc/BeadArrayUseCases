@@ -88,8 +88,9 @@ It is assumed that the reader has familiarity with basic {\tt R} data structures
 The version of  R used to compile this vignette is \Sexpr{paste(R.Version()$major, R.Version()$minor,sep=".")}. The Bioconductor packages required can be installed by typing the following commands at the R command prompt:\\
 
 <<install, eval=FALSE>>=
-source("http://www.bioconductor.org/biocLite.R")
-biocLite(c("beadarray","limma","GEOquery", "illuminaHumanv1.db",
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install(c("beadarray","limma","GEOquery", "illuminaHumanv1.db",
               "illuminaHumanv2.db", "illuminaHumanv3.db", "BeadArrayUseCases"))
 @
 
@@ -97,7 +98,7 @@ There are also a few packages that are used to illustrate particular use case, b
 
 <<optionalInstall, eval=FALSE>>=
 
-biocLite(c("GOstats", "GenomicRanges", "Biostrings"))
+BiocManager::install(c("GOstats", "GenomicRanges", "Biostrings"))
 
 @
 \section*{Introduction to the BeadArray technology}
@@ -1410,8 +1411,9 @@ Calculate the GC content of all Humanv2 probes and plot a histogram.
 We will illustrate this use case using the \Rpackage{Biostrings} package. If you do not have this package you can install it in the usual way.
 
 <<installBiostrings,eval=FALSE>>=
-source("http://www.bioconductor.org/biocLite.R")
-biocLite("Biostrings")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("Biostrings")
 @
 
 <<GChistogram>>=
@@ -1434,8 +1436,9 @@ Convert the Humanv2 probe locations into a RangedData object.
 \end{exc}
 We will illustrate this use case using the \Rpackage{GenomicRanges} package. If you do not have this package you can install it in the usual way.
 <<installGenomicRanges,eval=FALSE>>=
-source("http://www.bioconductor.org/biocLite.R")
-biocLite("GenomicRanges")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("GenomicRanges")
 @
 
 
@@ -1495,8 +1498,9 @@ Using GOstats find over-represented GO terms amongst the probes that show eviden
 
 We will illustrate this use case using the \Rpackage{GOstats} package. If you do not have this package you can install it in the usual way.
 <<installGOstats,eval=FALSE>>=
-source("http://www.bioconductor.org/biocLite.R")
-biocLite("GOstats")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("GOstats")
 @
 
 
@@ -1578,8 +1582,9 @@ genomics experiments, can be imported into {\tt R} using the \Rpackage{ArrayExpr
 \end{notebell}
 
 <<installMAQCsubsetpackage,eval=FALSE>>=
-source("http://www.bioconductor.org/biocLite.R")
-biocLite("MAQCsubsetILM")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("MAQCsubsetILM")
 library(MAQCsubsetILM)
 data(refA);data(refB);data(refC);data(refD)
 gse = combine(refA, refB, refC, refD)
