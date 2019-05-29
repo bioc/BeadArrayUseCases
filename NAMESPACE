@@ -1,4 +1,4 @@
 import(beadarray)
-import(limma)
+import(limma, except = imageplot)
 import(GEOquery)
 

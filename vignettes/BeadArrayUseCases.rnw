@@ -1454,7 +1454,7 @@ epos <- as.numeric(unlist(lapply(allLocs,function(x) strsplit(as.character(x), "
 strand <-  substr(unlist(lapply(allLocs,function(x) strsplit(as.character(x), ":")[[1]][4])),1,1)
 
 validPos <- !is.na(spos)
-Humanv2RD <- RangedData(space = chrs[validPos], 
+Humanv2RD <- GRanges(seqnames = chrs[validPos], 
 ranges=IRanges(start = spos[validPos],end=epos[validPos]),
 names=names(allLocs)[validPos],strand = strand[validPos])
 @
@@ -1472,15 +1472,15 @@ Find all Humanv2 probes located on chromsome 8 between bases 28,800,001 and 36,5
 
 query <- IRanges(start = 28800001, end = 36500000)
 
-olaps <- findOverlaps(Humanv2RD, RangedData(query,space="chr8"))[["chr8"]]
+olaps <- findOverlaps(Humanv2RD, GRanges(ranges = query, seqnames = "chr8"))
 
 matchingProbes <- as.matrix(olaps)[,1]
 
-Humanv2RD[space(Humanv2RD) == "chr8",][matchingProbes,]
+Humanv2RD[matchingProbes,]
 
-Humanv2RD[space(Humanv2RD) == "chr8",]$names[matchingProbes]
+Humanv2RD$names[matchingProbes]
 
-unlist(mget(Humanv2RD[space(Humanv2RD) == "chr8",]$names[matchingProbes], illuminaHumanv2SYMBOL))
+unlist(mget(Humanv2RD$names[matchingProbes], illuminaHumanv2SYMBOL))
 
 @
 

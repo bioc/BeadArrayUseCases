@@ -1,12 +1,12 @@
 Package: BeadArrayUseCases
-Version: 1.23.0
-Date: 2012-03-17
+Version: 1.23.1
+Date: 2019-05-29
 Title: Analysing Illumina BeadArray expression data using Bioconductor
 Author: Mark Dunning, Wei Shi, Andy Lynch, Mike Smith, Matt Ritchie
 Description: Example data files and use cases for processing Illumina BeadArray expression data using Bioconductor
 Imports: beadarray (>= 2.3.18), limma, GEOquery
 Suggests: Biostrings, GenomicRanges, illuminaHumanv1.db,
         illuminaHumanv2.db, illuminaHumanv3.db
-Maintainer: Mike Smith <mike.smith@embl.de>
+Maintainer: Mike Smith <grimbough@gmail.com>
 License: GPL-2
 biocViews: MicroarrayData
