@@ -1540,11 +1540,8 @@ library(GEOquery)
 library(limma)
 library(illuminaHumanv1.db)
 
-#url <- "ftp://ftp.ncbi.nih.gov/pub/geo/DATA/SeriesMatrix/GSE5350/"
-#filenm <- "GSE5350-GPL2507_series_matrix.txt.gz"
-#download.file(paste(url, filenm, sep=""), destfile=filenm)
-#gse <- getGEO(filename=filenm)
-
+## We need to set this, otherwise the next line will fail
+Sys.setenv("VROOM_CONNECTION_SIZE" = 256000)
 gse <- getGEO(GEO = 'GSE5350')[['GSE5350-GPL2507_series_matrix.txt.gz']]
 
 dim(gse)
