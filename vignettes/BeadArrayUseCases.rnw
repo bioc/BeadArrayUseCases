@@ -1541,7 +1541,7 @@ library(limma)
 library(illuminaHumanv1.db)
 
 ## We need to set this, otherwise the next line will fail
-Sys.setenv("VROOM_CONNECTION_SIZE" = 256000)
+Sys.setenv("VROOM_CONNECTION_SIZE" = 512000)
 gse <- getGEO(GEO = 'GSE5350')[['GSE5350-GPL2507_series_matrix.txt.gz']]
 
 dim(gse)
