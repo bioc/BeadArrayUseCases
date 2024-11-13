@@ -1374,12 +1374,12 @@ write.fit(contr.fit, file = "maqcresultsv2.txt")
 We now give a few brief example use cases that we have encountered in our own analyses.
 
 \begin{exc}
-Retrieve the Illumina Humanv2 IDs that are part of the cell cycle according to GO (GO:0007049)
+Retrieve the Illumina Humanv2 IDs that are involved in positive regulation of the cell cycle according to GO (GO:0045787)
 or KEGG (04110)
 
 \end{exc}
 <<getGO>>=
-cellCycleProbesGO <- mget("GO:0007049", illuminaHumanv2GO2PROBE)
+cellCycleProbesGO <- mget("GO:0045787", illuminaHumanv2GO2PROBE)
 cellCycleProbesKEGG <- mget("04110", illuminaHumanv2PATH2PROBE)
 @
 
